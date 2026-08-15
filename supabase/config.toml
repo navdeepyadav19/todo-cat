@@ -156,7 +156,7 @@ max_indexes = 5
 enabled = true
 # The base URL of your website. Used as an allow-list for redirects and for constructing URLs used
 # in emails.
-site_url = "http://localhost:5173"
+site_url = "https://todo-cat-nine.vercel.app"
 # The public URL that Auth serves on. Defaults to the API external URL with `/auth/v1` appended.
 # external_url = ""
 # A list of *exact* URLs that auth providers are permitted to redirect to post authentication.
@@ -165,8 +165,9 @@ site_url = "http://localhost:5173"
 # to redirect back to an origin that isn't on this list.
 additional_redirect_urls = [
   "http://localhost:5173",
+  "https://todo-cat-nine.vercel.app",
   "https://todo-cat-horizonpay.vercel.app",
-  "https://todo-cat-*-horizonpay.vercel.app",
+  "https://todo-*-horizonpay.vercel.app",
 ]
 # How long tokens are valid for, in seconds. Defaults to 3600 (1 hour), maximum 604,800 (1 week).
 jwt_expiry = 3600
