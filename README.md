@@ -15,9 +15,16 @@ row-level security.
 
 ## Setup
 
-Copy `.env.example` to `.env.local` and fill in your Supabase project URL and
-publishable key, then run `supabase/schema.sql` once in the Supabase SQL editor.
-Without those variables the app still runs — it just stays in local-only mode.
+```bash
+npx supabase login
+npx supabase link --project-ref <your-project-ref>
+npx supabase db push        # applies supabase/migrations/*
+npx supabase config push    # applies [auth] settings from config.toml
+```
+
+Then copy `.env.example` to `.env.local` and fill in the project URL and publishable
+key (`npx supabase projects api-keys` prints them). Without those variables the app
+still runs — it just stays in local-only mode.
 
 ## Where things are
 
@@ -31,7 +38,8 @@ Without those variables the app still runs — it just stays in local-only mode.
 | `src/components/Cat.tsx` | The cat, as inline SVG |
 | `src/components/CatReaction.tsx` | Celebration lifecycle and the praise bubble |
 | `src/styles.css` | Tokens, keyframes, dark mode, reduced motion |
-| `supabase/schema.sql` | Table + RLS policies |
+| `supabase/migrations/` | Table + RLS policies |
+| `supabase/config.toml` | Auth settings pushed to the hosted project |
 
 ## Three spots marked for you
 
